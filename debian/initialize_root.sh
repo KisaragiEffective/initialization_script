@@ -16,7 +16,8 @@ sudo apt -y install \
   xclip \
   jq \
   nvidia-driver \
-  pavucontrol
+  pavucontrol \
+  fcitx-mozc
 
 # setup custom APT repository
 # setup mono
