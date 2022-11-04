@@ -55,7 +55,8 @@ sudo update-locale LANG=ja_JP.UTF-8
 # download Discord@latest (they bump its version eventually)
 DISCORD_TEMP=$(mktemp)
 curl -sSL 'https://discord.com/api/download?platform=linux&format=deb' > $DISCORD_TEMP
-sudo apt install $DISCORD_TEMP
-rm $DISCORD_TEMP
+mv $DISCORD_TEMP $DISCORD_TEMP.deb
+sudo apt install $DISCORD_TEMP.deb
+rm $DISCORD_TEMP.deb
 unset $DISCORD_TEMP
 
