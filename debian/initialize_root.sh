@@ -43,6 +43,14 @@ sudo apt -y install apt-transport-https
 sudo apt update
 sudo apt -y install mono-devel temurin-17-jdk code
 
+# setup ja_JP
+sudo apt-get update
+sudo apt-get install locales -y
+# uncomment
+sudo sed -i -E 's/# (ja_JP.UTF-8)/\1/' /etc/locale.gen
+sudo locale-gen
+sudo update-locale LANG=ja_JP.UTF-8
+
 # download Discord@latest (they bump its version eventually)
 DISCORD_TEMP=$(mktemp)
 curl -sSL 'https://discord.com/api/download?platform=linux&format=deb' > $DISCORD_TEMP
